@@ -11,16 +11,16 @@ class Header extends React.Component  {
                 <nav className="nav">
                     <ul>
                         <li>
-                            <Link to="/" className="li 	d-none d-lg-block d-xl-block">HOME</Link>
+                            <Link to="/" className="li">HOME</Link>
                         </li>
                         <li>
-                            <Link to="/login" className="li d-none d-lg-block d-xl-block">LOGIN</Link>
+                            <Link to="/login" className="li">LOGIN</Link>
                         </li>
                         <li>
-                            <Link to="/register" className="li d-none d-lg-block d-xl-block">REGISTER</Link>
+                            <Link to="/register" className="li">REGISTER</Link>
                         </li>
                         <li>
-                            <Link to="/profile" className="li d-none d-lg-block d-xl-block">PROFILE</Link>
+                            <Link to="/profile" className="li">PROFILE</Link>
                         </li>
                     </ul>
                 </nav>
