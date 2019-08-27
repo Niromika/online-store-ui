@@ -1,0 +1,27 @@
+.Categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: 	#000000;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .category {
+        width: 300px;
+        height: 300px;
+        box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+        background: #ffffff;
+        color: #444;
+        font-size: 30px;
+        margin: 20px;
+        opacity: 0.7;
+
+        &:hover {
+            box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.75);
+            font-size: 36px;
+            transition: all 0.4s ease;
+        }
+    }
+}
+
+
