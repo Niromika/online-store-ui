@@ -12,6 +12,10 @@ import theme from '../theme';
 
 const AppStyled = styled.div`
   background: ${({theme}) => theme.main.background} !important;
+  font-family: Arial, Helvetica, sans-serif;
+    ol, ul, dl {
+      margin-bottom: 0;
+    }
 `;
 
 class App extends React.Component {
@@ -19,7 +23,7 @@ class App extends React.Component {
     return (
       <Router>
         <ThemeProvider theme={theme}>
-          <AppStyled>
+          <AppStyled className="App">
             <Header />
 
             <Route path="/" exact component={Homepage} />
