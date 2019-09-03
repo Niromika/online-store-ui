@@ -1,6 +1,11 @@
 import React from 'react';
-import './Category.scss'
 import ProductService from '../services/product.service';
+import styled from 'styled-components';
+
+const CategoryStyled = styled.div`
+
+`;
+
 
 class Category extends React.Component {
 
@@ -20,11 +25,11 @@ class Category extends React.Component {
 
     render() {
       return (
-        <div className="Category">
+        <CategoryStyled className="Category">
             {this.state.products.map((product, i)  => {
                 return <div key={i}>{product.name}</div>
             })}
-        </div>
+        </CategoryStyled>
       );
     }
   }

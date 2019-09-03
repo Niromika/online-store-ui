@@ -1,16 +1,28 @@
 import React from 'react';
 import CategoryService from '../services/category.service';
 import categoryService from '../services/category.service';
-import './Homepage.scss';
 import Categories from './Categories/Categories';
+import styled from 'styled-components';
+
+const HomepageStyled = styled.div`
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: 	#333333;
+    font-family: Arial, Helvetica, sans-serif;
+`;
+
+
 
 class Homepage extends React.Component {
 
     render() {
       return (
-        <div className="Homepage">
+        <HomepageStyled className="Homepage">
             <Categories />
-        </div>
+        </HomepageStyled>
       );
     }
   }

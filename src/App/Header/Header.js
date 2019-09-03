@@ -20,10 +20,13 @@ const HeaderStyled = styled.div`
     }
     .nav {
         width: 100%;
+        
         ul {
             width: inherit;
-        }
-        li {
+            display: flex;
+            justify-content: space-between;
+
+            li {
             display: inline-block;
             margin: 18px;
             font-size: 14px;
@@ -33,17 +36,17 @@ const HeaderStyled = styled.div`
             &:hover {
                
             }
+            i {
+                padding: 3px;
+            }
 
             .li {
                 color:  ${({theme}) => theme.label.primary};
             }
+          }
         }
+        
     }
-
-    .h2 {
-        color: #fff;
-        font-weight: 700;
-    }    
 `;
 
 
@@ -57,16 +60,16 @@ class Header extends React.Component  {
                     <nav className="nav">
                         <ul>
                             <li>
-                                <Link to="/" className="li">HOME</Link>
+                                <Link to="/" className="li"><i class="fas fa-home"></i>HOME</Link>
                             </li>
                             <li>
-                                <Link to="/login" className="li"><i class="fas fa-user"></i> <span>LOGIN</span></Link>
+                                <Link to="/profile" className="li"><i class="far fa-user-circle"></i>PROFILE</Link>
                             </li>
                             <li>
                                 <Link to="/register" className="li">REGISTER</Link>
                             </li>
                             <li>
-                                <Link to="/profile" className="li">PROFILE</Link>
+                                <Link to="/login" className="li"><i class="fas fa-user"></i>LOGIN</Link>
                             </li>
                         </ul>
                     </nav>

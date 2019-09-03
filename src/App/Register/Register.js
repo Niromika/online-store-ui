@@ -1,8 +1,87 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import User from '../models/user';
-import './Register.scss';
 import UserService from '../services/user.service';
+import styled from 'styled-components';
+
+const RegisterStyled = styled.div`
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .register-container {
+        background: ${({theme}) => theme.main.background_secondery};
+        width: 320px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        padding: 14px;
+        box-shadow: ${({theme}) => theme.box_shadow.form};
+
+        .h1 {
+            margin-bottom: 50px;
+            letter-spacing: 3px;
+            color: #444;
+        }
+
+        .register-btn {
+            border: 1px solid #000;
+            border-radius: 8px;
+            font-weight: 600;
+            color: 	#444;
+            letter-spacing: 1px;
+            width: 100%;
+            margin-top: 12px;
+
+            &:hover {
+                background: #008000;
+                color: #ffffff;
+                border-radius: 30px;
+                transition: all 1s;
+            }
+        }
+
+        .form-control {
+            background: transparent;
+            border: 0 solid;
+            border-bottom: 1px solid #000000;
+            font-weight: 500;
+            font-size: 18px;
+            color: #999;
+            text-align: center;
+
+            &:focus {
+                color: #444;
+            }
+        }
+
+        
+        .alert {
+            background: transparent;
+            margin: 3px;
+
+            &:focus {
+                color: #444;
+            }
+        }
+
+        .bday {
+            text-align: center;
+            color: #999;
+        }
+
+        input::-webkit-inner-spin-button,
+        input::-webkit-clear-button {
+          display: none;
+        }
+
+        input::-webkit-calendar-picker-indicator {
+            color: rgba(0, 0, 0, 0);
+            opacity: 1
+        }
+    }
+`;
 
 class Register extends React.Component {
 
@@ -25,12 +104,12 @@ class Register extends React.Component {
 
     render() {
         return (
-            <div className="Register">
+            <RegisterStyled className="Register">
                 <Formik 
                     initialValues={{name:'', email: '', password: '', age: ''}}
                     validationSchema={User}
                     onSubmit={this.send.bind(this)}>   
-                    <Form className="container">
+                    <Form className="register-container">
                         <div className="h1">Sign up</div>
                         <div className="form-group">
                             <Field type="text" name="first_name" className="form-control"  placeholder="first name"/>
@@ -57,7 +136,7 @@ class Register extends React.Component {
                         </div>
                     </Form>
                 </Formik>
-            </div>
+            </RegisterStyled>
         );
     }
 }

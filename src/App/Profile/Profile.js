@@ -1,6 +1,30 @@
 import React from 'react';
 import UserService from '../services/user.service';
-import './Profile.scss';
+import styled from 'styled-components';
+
+const ProfileStyled = styled.div`
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: 	${({theme}) => theme.label.primary};
+    font-family: Arial, Helvetica, sans-serif;
+
+    .data-container {
+        width: 400px;
+        box-shadow: ${({theme}) => theme.box_shadow.category};
+        background: ${({theme}) => theme.main.background_secondery};
+        border-radius: 5px;
+        padding: 14px;
+
+        .data {
+            font-weight: 500;
+            font-size: 28px;
+            height: 100%;
+        }
+    }
+`;
  
 class Profile extends React.Component {
 
@@ -25,7 +49,7 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <div className="Profile">
+            <ProfileStyled className="Profile">
                 <div className="data-container">
                     <h1 className="title">Profile</h1>
                     <div className="data">{this.state.profile.first_name}</div>
@@ -33,7 +57,7 @@ class Profile extends React.Component {
                     <div className="data">{this.state.profile.email}</div>
                     <div className="data">{this.state.profile.bday}</div>
                 </div>
-            </div>
+            </ProfileStyled>
         );
     }
 }
