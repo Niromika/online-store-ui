@@ -5,13 +5,10 @@ import Categories from './Categories/Categories';
 import styled from 'styled-components';
 
 const HomepageStyled = styled.div`
-    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: 	#333333;
-    font-family: Arial, Helvetica, sans-serif;
 `;
 
 

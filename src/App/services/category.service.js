@@ -8,6 +8,4 @@ class CategoryService extends Network {
 
 }
 
-    
-
 export default new CategoryService();

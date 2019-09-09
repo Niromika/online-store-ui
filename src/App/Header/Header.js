@@ -3,14 +3,13 @@ import {Link} from "react-router-dom";
 import styled from 'styled-components';
 
 const HeaderStyled = styled.div`
-    width: 100%;
-
     .header-wrapper {
-        width: 90%;
-        border-bottom: 1px solid orangered;
-        margin: auto;
+        width: ${({theme}) => theme.main.width};
+        margin: ${({theme}) => theme.main.margin};
+        border-bottom: ${({theme}) => theme.main.border};
         padding: 10px 0;
         display: flex;
+        margin-bottom: 30px;
     }
     
     
@@ -41,7 +40,7 @@ const HeaderStyled = styled.div`
             }
 
             .li {
-                color:  ${({theme}) => theme.label.primary};
+                color: ${({theme}) => theme.color.primary};
             }
           }
         }
@@ -70,6 +69,9 @@ class Header extends React.Component  {
                             </li>
                             <li>
                                 <Link to="/login" className="li"><i class="fas fa-user"></i>LOGIN</Link>
+                            </li>
+                            <li>
+                                <Link to="/cart" className="li"><i class="fas fa-shopping-cart"></i></Link>
                             </li>
                         </ul>
                     </nav>

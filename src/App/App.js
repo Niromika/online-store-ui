@@ -8,10 +8,13 @@ import Login from './Login/Login';
 import Homepage from './Homepage/Homepage';
 import Profile from './Profile/Profile';
 import Category from './Category/Category';
+import Product from './Category/Product/Product';
+import Cart from './Cart/Cart';
 import theme from '../theme';
 
 const AppStyled = styled.div`
-  background: ${({theme}) => theme.main.background} !important;
+  height: 100%;
+  color: ${({theme}) => theme.color.primary};
   font-family: Arial, Helvetica, sans-serif;
     ol, ul, dl {
       margin-bottom: 0;
@@ -27,10 +30,12 @@ class App extends React.Component {
             <Header />
 
             <Route path="/" exact component={Homepage} />
+            <Route path="/cart" exact component={Cart} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/profile" component={Profile} />
-            <Route path="/category/:id" component={Category} />
+            <Route path="/category/:id" exact component={Category} />
+            <Route path="/category/:categoryId/product/:id" component={Product} />
 
           </AppStyled>
         </ThemeProvider>

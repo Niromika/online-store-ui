@@ -5,7 +5,6 @@ import UserService from '../services/user.service';
 import styled from 'styled-components';
 
 const RegisterStyled = styled.div`
-    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +17,7 @@ const RegisterStyled = styled.div`
         border-radius: 8px;
         padding: 14px;
         box-shadow: ${({theme}) => theme.box_shadow.form};
+        margin: 50px 0;
 
         .h1 {
             margin-bottom: 50px;
@@ -57,9 +57,10 @@ const RegisterStyled = styled.div`
         }
 
         
-        .alert {
+        .error-messgae {
             background: transparent;
             margin: 3px;
+            color: red;
 
             &:focus {
                 color: #444;
@@ -113,23 +114,23 @@ class Register extends React.Component {
                         <div className="h1">Sign up</div>
                         <div className="form-group">
                             <Field type="text" name="first_name" className="form-control"  placeholder="first name"/>
-                            <ErrorMessage name="first_name" component="div" className="alret"/>
+                            <ErrorMessage name="first_name" component="div" className="alret error-messgae"/>
                         </div>
                         <div className="form-group">
                             <Field type="text" name="last_name" className="form-control"  placeholder="last name"/>
-                            <ErrorMessage name="last_name" component="div" className="alret"/>
+                            <ErrorMessage name="last_name" component="div" className="alret error-messgae"/>
                         </div>
                         <div className="form-group">
                             <Field type="text" name="email" className="form-control" placeholder="email"/>
-                            <ErrorMessage name="email" component="div" className="alret"/>
+                            <ErrorMessage name="email" component="div" className="alret error-messgae"/>
                         </div>
                         <div className="form-group">
                             <Field type="password" name="password" className="form-control" placeholder="password"/>
-                            <ErrorMessage name="password" component="div" className="alret"/>
+                            <ErrorMessage name="password" component="div" className="alret error-messgae"/>
                         </div>
                         <div className="form-group"> 
                             <Field type="date" name="bday" className="form-control bday"/>
-                            <ErrorMessage name="bday" component="div" className="alret"/>
+                            <ErrorMessage name="bday" component="div" className="alret error-messgae"/>
                         </div>
                         <div>
                             <Field type="submit" value="Register" className="btn register-btn" disabled={this.state.submitting}/>

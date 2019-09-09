@@ -3,13 +3,10 @@ import UserService from '../services/user.service';
 import styled from 'styled-components';
 
 const ProfileStyled = styled.div`
-    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: 	${({theme}) => theme.label.primary};
-    font-family: Arial, Helvetica, sans-serif;
 
     .data-container {
         width: 400px;
