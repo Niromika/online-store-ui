@@ -13,8 +13,8 @@ const CategoriesStyled = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 250px;
-        height: 300px;
+        width: 200px;
+        height: 250px;
         box-shadow: ${({theme}) => theme.box_shadow.category};
         background: ${({theme}) => theme.main.background_secondery};
         font-size: 22px;
@@ -27,12 +27,12 @@ const CategoriesStyled = styled.div`
         }
 
         .category-title {
-          background: linear-gradient(0deg, rgba(0,23,255,1) 0%, rgba(35,150,234,1) 100%);
-          color: #F5F5F5;
+          background: #1E90FF;
+          color: #fff;
         }
 
         .category-img {
-          height: 260px;
+          height: 200px;
           width: 100%;
         }
     }

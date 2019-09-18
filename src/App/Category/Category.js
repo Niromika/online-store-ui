@@ -14,8 +14,8 @@ const CategoryStyled = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 250px;
-      height: 300px;
+      width: 200px;
+      height: 250px;
       margin: 30px;
       font-size: 22px;
       box-shadow: ${({theme}) => theme.box_shadow.category};
@@ -28,8 +28,8 @@ const CategoryStyled = styled.div`
             text-decoration: ${({theme}) => theme.main.text_decoration};
         }
         .product-title {
-          background: linear-gradient(0deg, rgba(0,23,255,1) 0%, rgba(35,150,234,1) 100%);
-          color: #F5F5F5;
+          background: #1E90FF;
+          color: #fff;
         }
 
         .product-img {

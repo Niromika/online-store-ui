@@ -1,6 +1,4 @@
 import React from 'react';
-import CategoryService from '../services/category.service';
-import categoryService from '../services/category.service';
 import Categories from './Categories/Categories';
 import styled from 'styled-components';
 
