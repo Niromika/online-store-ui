@@ -14,7 +14,8 @@ const HeaderStyled = styled.div`
     
     
     img {
-      height: 70px; 
+      height: 65px; 
+      margin: 5px;
     }
     .nav {
         width: 100%;
@@ -80,7 +81,9 @@ class Header extends React.Component  {
                                 <li>
                                     <Link to="/cart" className="li"><i class="fas fa-shopping-cart fa-2x"></i></Link>
                                 </li>
-                                <CartButton />
+                                <li>
+                                    <CartButton />
+                                </li>
                             </div>
                         </ul>
                     </nav>

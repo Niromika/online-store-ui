@@ -1,6 +1,8 @@
 import React from 'react';
 import UserService from '../services/user.service';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+
 
 const ProfileStyled = styled.div`
     display: flex;
@@ -53,6 +55,9 @@ class Profile extends React.Component {
                     <div className="data">{this.state.profile.last_name}</div>
                     <div className="data">{this.state.profile.email}</div>
                     <div className="data">{this.state.profile.bday}</div>
+                    <Link to="/profile/edit">
+                        <button className="btn btn-success edit">edit</button>
+                    </Link>    
                 </div>
             </ProfileStyled>
         );

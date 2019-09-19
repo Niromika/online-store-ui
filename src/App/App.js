@@ -7,9 +7,11 @@ import Header from './Header/Header';
 import Login from './Login/Login';
 import Homepage from './Homepage/Homepage';
 import Profile from './Profile/Profile';
+import EditDetails from './Profile/EditDetails/EditDetails';
 import Category from './Category/Category';
 import Product from './Category/Product/Product';
 import Cart from './Cart/Cart';
+import Admin from './Admin/Admin';
 import theme from '../theme';
 
 const AppStyled = styled.div`
@@ -33,9 +35,14 @@ class App extends React.Component {
             <Route path="/cart" exact component={Cart} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/profile" exact component={Profile} />
+            <Route path="/profile/edit" component={EditDetails} />
             <Route path="/category/:id" exact component={Category} />
             <Route path="/category/:categoryId/product/:id" component={Product} />
+
+            <Route path="/admin" component={Admin} />
+
+
 
           </AppStyled>
         </ThemeProvider>
