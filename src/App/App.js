@@ -14,12 +14,19 @@ import Cart from './Cart/Cart';
 import Admin from './Admin/Admin';
 import theme from '../theme';
 
+
 const AppStyled = styled.div`
   height: 100%;
   color: ${({theme}) => theme.color.primary};
   font-family: Arial, Helvetica, sans-serif;
     ol, ul, dl {
       margin-bottom: 0;
+    }
+
+    .background {
+      background-image: url('https://media.wired.com/photos/5c01dbc43028102cdb865eab/2:1/w_2400,h_1200,c_limit/Dog-gift-guide-955715252.jpg');
+      background-size: cover
+      min-height: 370px;
     }
 `;
 
@@ -29,7 +36,10 @@ class App extends React.Component {
       <Router>
         <ThemeProvider theme={theme}>
           <AppStyled className="App">
-            <Header />
+            
+            <div className="background">
+              <Header />
+            </div>
 
             <Route path="/" exact component={Homepage} />
             <Route path="/cart" exact component={Cart} />

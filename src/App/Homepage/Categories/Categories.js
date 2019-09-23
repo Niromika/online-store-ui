@@ -13,27 +13,29 @@ const CategoriesStyled = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 200px;
         height: 250px;
-        box-shadow: ${({theme}) => theme.box_shadow.category};
-        background: ${({theme}) => theme.main.background_secondery};
         font-size: 22px;
         letter-spacing: 1px;
-        margin: 30px;
+        margin: 60px;
 
         &:hover {
             text-decoration: ${({theme}) => theme.main.text_decoration};
-            border: ${({theme}) => theme.main.border};
         }
 
         .category-title {
-          background: #1E90FF;
-          color: #fff;
+          color: ${({theme}) => theme.color.secondery};
         }
 
         .category-img {
           height: 200px;
-          width: 100%;
+          width: 200px;
+          border-radius: 50%;
+          background: ${({theme}) => theme.main.background_secondery};
+          box-shadow: ${({theme}) => theme.box_shadow.category};
+
+          &:hover {
+            box-shadow: 14px 14px 50px -10px rgba(0, 0, 0, 0.95);
+          }
         }
     }
 `;
