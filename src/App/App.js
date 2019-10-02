@@ -14,10 +14,8 @@ import Cart from './Cart/Cart';
 import Admin from './Admin/Admin';
 import theme from '../theme';
 
-
 const AppStyled = styled.div`
   height: 100%;
-  color: ${({theme}) => theme.color.primary};
   font-family: Arial, Helvetica, sans-serif;
     ol, ul, dl {
       margin-bottom: 0;

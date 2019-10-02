@@ -15,7 +15,7 @@ const CategoryStyled = styled.div`
       flex-direction: column;
       justify-content: space-between;
       width: 200px;
-      height: 250px;
+      height: 200px;
       margin: 30px;
       font-size: 22px;
       box-shadow: ${({theme}) => theme.box_shadow.category};
@@ -31,10 +31,9 @@ const CategoryStyled = styled.div`
           background: #1E90FF;
           color: #fff;
         }
-
         .product-img {
-          height: 260px;
-          width: 100%;
+          width: 200px;
+          height: 200px;
           padding: 10px;
         }   
     }
@@ -62,10 +61,11 @@ class Category extends React.Component {
       return (
         <CategoryStyled>
             {this.state.products.map((product, i)  => {
-                return <Link to={`/category/${this.categoryId}/product/${product.id}`} className="product" key={i}>
-                  <div className="product-img"></div>
-                  <div className="product-title">{product.name}</div>
-                </Link>
+                return <div className="product">
+                    <img className="product-img" src ={'http://localhost:4000/' + product.image} />
+                    <div>{this.state.products.name}</div>
+                    <Link to={`/category/${this.categoryId}/product/${product.id}`} className="product" key={i}></Link>
+                </div>
             })}
         </CategoryStyled>
       );

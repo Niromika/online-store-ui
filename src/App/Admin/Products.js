@@ -4,8 +4,10 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from 'styled-components';
 import Product from '../models/product';
 import categoryService from '../services/category.service';
-import Category from '../Category/Category';
-const ProductsStyled = styled.div``;
+import productService from '../services/product.service';
+
+const ProductsStyled = styled.div`
+`;
 
 class Products extends React.Component {
 
@@ -27,7 +29,7 @@ class Products extends React.Component {
     }
 
     send(values) {
-        console.log(values)
+        productService.create(values);
     }
 
 
@@ -40,6 +42,16 @@ class Products extends React.Component {
                     onSubmit={this.send.bind(this)}>   
                     <Form className="products-container col-sm-6">
                         <div className="form-group">
+                            <label>category:</label>
+                            <Field component="select" name="categoryId" className="form-control">
+                                <option defaultValue>-Choose category</option>
+                                {this.state.categories.map((category, index)=>{
+                                    return <option key={index} value={category.id}>{category.name}</option>
+                                })}
+                            </Field>
+                            <ErrorMessage name="category" component="div" className="alret error-messgae"/>
+                        </div>
+                        <div className="form-group">
                             <Field type="text" name="name" className="form-control"  placeholder="name"/>
                             <ErrorMessage name="name" component="div" className="alret error-messgae"/>
                         </div>
@@ -50,16 +62,6 @@ class Products extends React.Component {
                         <div className="form-group">
                             <Field type="number" name="price" className="form-control"  placeholder="price"/>
                             <ErrorMessage name="price" component="div" className="alret error-messgae"/>
-                        </div>
-                        <div className="form-group">
-                            <label>category:</label>
-                            <Field component="select" name="categoryId" className="form-control">
-                                <option defaultValue>-Choose category</option>
-                                {this.state.categories.map((category, index)=>{
-                                    return <option key={index} value={category.id}>{category.name}</option>
-                                })}
-                            </Field>
-                            <ErrorMessage name="category" component="div" className="alret error-messgae"/>
                         </div>
                         <div className="form-group">
                             <label>image:</label><br/>

@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import CartButton from './CartButton/CartButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderStyled = styled.div`
     .header-wrapper {
@@ -10,6 +12,7 @@ const HeaderStyled = styled.div`
         border-bottom: ${({theme}) => theme.main.border};
         display: flex;
         margin-bottom: 30px;
+        color: ${({theme}) => theme.color.primary};
     }
     
     
@@ -65,10 +68,10 @@ class Header extends React.Component  {
                         <ul>
                             <div>
                                 <li>
-                                    <Link to="/" className="li"><i class="fas fa-home"></i>HOME</Link>
+                                    <Link to="/" className="li"><FontAwesomeIcon icon={faHome} />HOME</Link>
                                 </li>
                                 <li>
-                                    <Link to="/profile" className="li"><i class="far fa-user-circle"></i>PROFILE</Link>
+                                    <Link to="/profile" className="li"><FontAwesomeIcon icon={faUserCircle} />PROFILE</Link>
                                 </li>
                             </div>
                             <div>
@@ -79,7 +82,7 @@ class Header extends React.Component  {
                                     <Link to="/login" className="li"><i class="fas fa-user"></i>LOGIN</Link>
                                 </li>
                                 <li>
-                                    <Link to="/cart" className="li"><i class="fas fa-shopping-cart fa-2x"></i></Link>
+                                    <Link to="/cart" className="li"><FontAwesomeIcon className="fa-2x" icon={faShoppingCart} /></Link>
                                 </li>
                                 <li>
                                     <CartButton />

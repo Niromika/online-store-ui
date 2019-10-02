@@ -21,6 +21,7 @@ const ProfileStyled = styled.div`
             font-weight: 500;
             font-size: 28px;
             height: 100%;
+            color: #222;
         }
     }
 `;
@@ -42,7 +43,6 @@ class Profile extends React.Component {
                 this.setState({
                     profile: user
                 });
-                console.log(this.state.profile);
             });
     }
 

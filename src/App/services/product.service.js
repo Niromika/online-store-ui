@@ -2,6 +2,12 @@ import Network from './network.services';
 
 class ProductService extends Network {
 
+    create(product) {
+        return this.send('PUT', `/product`, product, {
+            'Content-Type': 'multipart/form-data'
+        });
+    }
+
     getByCategoryId(categoryId) {
         return this.send('GET', `/category/${categoryId}/product`);
     }

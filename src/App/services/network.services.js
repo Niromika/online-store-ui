@@ -2,8 +2,8 @@ import cookie from 'react-cookies';
 
 class Network {
 
-    getHeaders() {
-        let headers = {
+    getHeaders(customHeaders) {
+        let headers = customHeaders || {
             'Content-Type': 'application/json'
         };
         if(this.getToken()) {
@@ -16,11 +16,11 @@ class Network {
         return cookie.load('user');
     }
 
-    send(method, url, data) {
+    send(method, url, data, headers) {
         return fetch('http://localhost:4000/api' + url, {
            method: method,
            body: JSON.stringify(data),
-           headers: this.getHeaders()
+           headers: this.getHeaders(headers)
         });
     }
 }
