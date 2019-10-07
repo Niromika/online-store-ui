@@ -12,7 +12,7 @@ const HomepageStyled = styled.div`
 
 
 class Homepage extends React.Component {
-
+    
     render() {
       return (
         <HomepageStyled className="Homepage">

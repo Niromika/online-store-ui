@@ -65,7 +65,7 @@ class Categories extends React.Component {
         <CategoriesStyled className="Categories">
             {this.state.categories.map( (category, i) => {
               return <Link to={'/category/' + category.id} key={i} className="category">
-                <img src={category.url} className="category-img"></img>
+                <img src={category.image} className="category-img"></img>
                 <div className="category-title">{category.name}</div>
               </Link>
             })}

@@ -29,7 +29,9 @@ class Products extends React.Component {
     }
 
     send(values) {
-        productService.create(values);
+        this.setState({submitting: true});
+        productService.create(values)
+            .then(() => this.setState({submitting: false}));
     }
 
 
@@ -39,8 +41,9 @@ class Products extends React.Component {
                <Formik 
                     initialValues={{name:'', brand: '', price: '', categoryId: '', image: ''}}
                     validationSchema={Product}
-                    onSubmit={this.send.bind(this)}>   
-                    <Form className="products-container col-sm-6">
+                    onSubmit={this.send.bind(this)}  
+                    render={({setFieldValue}) => {
+                       return <Form className="products-container col-sm-6">
                         <div className="form-group">
                             <label>category:</label>
                             <Field component="select" name="categoryId" className="form-control">
@@ -65,13 +68,15 @@ class Products extends React.Component {
                         </div>
                         <div className="form-group">
                             <label>image:</label><br/>
-                            <Field type="file" name="image" className="" placeholder="image"/>
-                            <ErrorMessage name="image" component="div" className="alret error-messgae"/>
+                            <input type="file" name="image" onChange={(event) => {
+                                setFieldValue('image', event.currentTarget.files[0]);
+                            }} />
                         </div>
                         <div>
                             <Field type="submit" value="send" className="btn btn-primary send-btn" disabled={this.state.submitting}/>
                         </div>
                     </Form>
+                    }}>
                 </Formik>
             </ProductsStyled>
         );

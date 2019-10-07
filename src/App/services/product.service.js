@@ -3,9 +3,11 @@ import Network from './network.services';
 class ProductService extends Network {
 
     create(product) {
-        return this.send('PUT', `/product`, product, {
-            'Content-Type': 'multipart/form-data'
-        });
+        const data = new FormData();
+        for( let prop in product) {
+            data.append(prop, product[prop]);
+        }
+        return this.sendMultipart('PUT', `/product`, data);
     }
 
     getByCategoryId(categoryId) {

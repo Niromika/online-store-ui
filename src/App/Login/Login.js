@@ -18,6 +18,7 @@ const LoginStyled = styled.div`
         border-radius: 8px;
         padding: 14px;
         box-shadow: ${({theme}) => theme.box_shadow.form};
+        position: absolute;
 
         .h1 {
             margin-bottom: 50px;

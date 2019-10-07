@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderStyled = styled.div`
+
     .header-wrapper {
         width: ${({theme}) => theme.main.width};
         margin: ${({theme}) => theme.main.margin};
@@ -44,7 +45,7 @@ const HeaderStyled = styled.div`
             }
 
             .fa-2x {
-                    font-size: 1.8em;
+                    font-size: 1.6em;
                 }
 
             .li {
@@ -79,7 +80,7 @@ class Header extends React.Component  {
                                     <Link to="/register" className="li">REGISTER</Link>
                                 </li>
                                 <li>
-                                    <Link to="/login" className="li"><i class="fas fa-user"></i>LOGIN</Link>
+                                    <Link to="/login" className="li"><i className="fas fa-user"></i>LOGIN</Link>
                                 </li>
                                 <li>
                                     <Link to="/cart" className="li"><FontAwesomeIcon className="fa-2x" icon={faShoppingCart} /></Link>

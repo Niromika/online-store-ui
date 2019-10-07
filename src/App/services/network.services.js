@@ -3,11 +3,12 @@ import cookie from 'react-cookies';
 class Network {
 
     getHeaders(customHeaders) {
-        let headers = customHeaders || {
-            'Content-Type': 'application/json'
-        };
+        let headers = {};
         if(this.getToken()) {
             headers.Authorization = this.getToken();
+        }
+        for(let prop in customHeaders) {
+            headers[prop] =customHeaders[prop];
         }
         return headers;
     }
@@ -22,6 +23,14 @@ class Network {
            body: JSON.stringify(data),
            headers: this.getHeaders(headers)
         });
+    }
+
+    sendMultipart(method, url, data) {
+        return fetch('http://localhost:4000/api' + url, {
+           method: method,
+           body: data,
+           headers: this.getHeaders()
+        });   
     }
 }
 

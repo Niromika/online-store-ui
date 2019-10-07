@@ -16,5 +16,6 @@ export default yup.object().shape({
         .string()
         .required('category is required'),
     image: yup
-         .string()    
+         .mixed()   
+         .required()    
 });

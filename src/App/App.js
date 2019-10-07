@@ -20,16 +20,16 @@ const AppStyled = styled.div`
     ol, ul, dl {
       margin-bottom: 0;
     }
-
     .background {
       background-image: url('https://media.wired.com/photos/5c01dbc43028102cdb865eab/2:1/w_2400,h_1200,c_limit/Dog-gift-guide-955715252.jpg');
-      background-size: cover
+      background-size: cover;
       min-height: 370px;
     }
 `;
 
 class App extends React.Component {
   render() {
+
     return (
       <Router>
         <ThemeProvider theme={theme}>
@@ -44,7 +44,7 @@ class App extends React.Component {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/profile" exact component={Profile} />
-            <Route path="/profile/edit" component={EditDetails} />
+            {/* <Route path="/profile/edit" component={EditDetails} /> */}
             <Route path="/category/:id" exact component={Category} />
             <Route path="/category/:categoryId/product/:id" component={Product} />
 

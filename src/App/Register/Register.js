@@ -11,6 +11,7 @@ const RegisterStyled = styled.div`
     text-align: center;
 
     .register-container {
+        position: absolute;
         background: ${({theme}) => theme.main.background_secondery};
         width: 320px;
         border: 1px solid transparent;

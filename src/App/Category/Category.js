@@ -62,9 +62,10 @@ class Category extends React.Component {
         <CategoryStyled>
             {this.state.products.map((product, i)  => {
                 return <div className="product">
-                    <img className="product-img" src ={'http://localhost:4000/' + product.image} />
+                  <Link to={`/category/${this.categoryId}/product/${product.id}`} className="" key={i}>
+                    <img className="product-img" src ={'http://localhost:4000/products/' + product.image} />
                     <div>{this.state.products.name}</div>
-                    <Link to={`/category/${this.categoryId}/product/${product.id}`} className="product" key={i}></Link>
+                  </Link>
                 </div>
             })}
         </CategoryStyled>
